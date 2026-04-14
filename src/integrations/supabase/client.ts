@@ -2,20 +2,15 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? "";
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? "";
-
-console.log("[Supabase] URL configurada:", SUPABASE_URL || "(vazia - usando placeholder)");
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://mtxljtvcvnfeyfwtwgjg.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im10eGxqdHZjdm5mZXlmd3R3Z2pnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNjMxODEsImV4cCI6MjA4NzkzOTE4MX0.AlQ6CtAEK8hYM37VYHAt1guo2o5GfGJZN_r1PpmQjaA";
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
-const FALLBACK_URL = "https://placeholder.supabase.co";
-const FALLBACK_KEY = "placeholder-key";
-
 export const supabase = createClient<Database>(
-  SUPABASE_URL || FALLBACK_URL,
-  SUPABASE_PUBLISHABLE_KEY || FALLBACK_KEY,
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY,
   {
     auth: {
       storage: localStorage,
