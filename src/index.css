@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 30% 25%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 220 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 70% 35%;
+
+    --radius: 0.75rem;
+
+    /* Financial Dashboard Colors */
+    --revenue: 152 60% 42%;
+    --revenue-foreground: 0 0% 100%;
+    --revenue-light: 152 45% 92%;
+    
+    --expense: 0 72% 51%;
+    --expense-foreground: 0 0% 100%;
+    --expense-light: 0 60% 95%;
+    
+    --result-positive: 152 60% 42%;
+    --result-negative: 0 72% 51%;
+    
+    --cash: 220 70% 50%;
+    --cash-foreground: 0 0% 100%;
+    --cash-light: 220 60% 95%;
+    
+    --budget: 45 93% 47%;
+    --budget-foreground: 0 0% 100%;
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 152 60% 42%;
+    --chart-3: 0 72% 51%;
+    --chart-4: 45 93% 47%;
+    --chart-5: 280 60% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 220 10% 90%;
+
+    --card: 220 20% 13%;
+    --card-foreground: 220 10% 90%;
+
+    --popover: 220 20% 13%;
+    --popover-foreground: 220 10% 90%;
+
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 220 10% 85%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 220 70% 55%;
+
+    /* Financial Dashboard Colors - Dark Mode */
+    --revenue: 152 60% 50%;
+    --revenue-foreground: 0 0% 100%;
+    --revenue-light: 152 40% 14%;
+    
+    --expense: 0 70% 55%;
+    --expense-foreground: 0 0% 100%;
+    --expense-light: 0 50% 14%;
+    
+    --result-positive: 152 60% 50%;
+    --result-negative: 0 70% 55%;
+    
+    --cash: 220 70% 60%;
+    --cash-foreground: 0 0% 100%;
+    --cash-light: 220 50% 15%;
+    
+    --budget: 45 85% 50%;
+    --budget-foreground: 0 0% 100%;
+    
+    --chart-1: 220 65% 55%;
+    --chart-2: 152 55% 45%;
+    --chart-3: 0 65% 50%;
+    --chart-4: 45 85% 50%;
+    --chart-5: 280 55% 60%;
+
+    --sidebar-background: 220 20% 12%;
+    --sidebar-foreground: 220 10% 85%;
+    --sidebar-primary: 220 10% 90%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 220 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile tooltip constraints */
+@media (max-width: 767px) {
+  /* Larger touch targets for chart dots */
+  .recharts-dot,
+  .recharts-active-dot {
+    r: 6 !important;
+  }
+}
